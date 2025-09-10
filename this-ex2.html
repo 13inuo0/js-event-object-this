@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>this 예제</title>
+    <style>
+      .tomato {
+        background-color: tomato;
+        border: 2px solid transparent;
+        /* border: none; */
+        border-radius: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="btn tomato">버튼 1</button>
+    <button class="btn">버튼 2</button>
+    <button class="btn">버튼 3</button>
+    <script>
+      const btns = document.querySelectorAll(".btn");
+      btns.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          // console.log(btn);
+          // 있는지 없는지 확인
+          if (this.classList.contains("tomato")) {
+            this.classList.remove("tomato");
+          } else {
+            // 다른 버튼들은 다 해제
+            btns.forEach((b) => {
+              // console.log(b);
+              b.classList.remove("tomato");
+            });
+            this.classList.add("tomato");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
