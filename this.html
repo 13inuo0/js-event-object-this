@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>text-1</p>
+    <p>text-2</p>
+    <p>text-3</p>
+    <script>
+      const pEls = document.querySelectorAll("p");
+      console.log(pEls);
+      // 노드 리스트가 뜨면 forEach 사용.
+      pEls.forEach(function (el) {
+        console.log(el);
+        // 화살표 함수 this는 다르게 작용한다.
+        el.addEventListener("click", (e) => {
+          // console.log(this);
+          // console.log(e);
+          console.log(e.target);
+          if ((e.target.style.color = "red")) {
+            e.target.style.color = "black";
+          } else {
+            e.target.style.color = "red";
+          }
+        });
+        // el.addEventListener("click", function () {
+        //   // console.log(this);
+        //   if ((this.style.color = "red")) {
+        //     this.style.color = "black";
+        //   } else {
+        //     this.style.color = "red";
+        //   }
+        // });
+      });
+    </script>
+  </body>
+</html>
