@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .tomato {
+        background-color: tomato;
+        /* border: none; */
+        border-radius: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="btn">버튼 1</button>
+    <button class="btn">버튼 2</button>
+    <script>
+      const btns = document.querySelectorAll(".btn");
+      btns.forEach(function (el) {
+        // el.addEventListener("click", function () {
+        //   this.style.backgroundColor = "green";
+        //   if (this.style.backgroundcolor === "green") {
+        //     this.style.backgroundcolor = "";
+        //   } else {
+        //     this.style.backgroundcolor = "green";
+        //   }
+        // });
+        btn.addEventListener("click", function () {
+          this.classList.toggle("tomato");
+        });
+      });
+    </script>
+  </body>
+</html>
